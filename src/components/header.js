@@ -48,7 +48,7 @@ const Header = () => {
     const { avata, name, title, subline, place, headling, headlineTime, headerButtons } = data.contentfulHeader;
     console.log(headerButtons);
     return (
-        <header>
+        <div className="header-main">
             <div className="header2">
                 <div className="container">
                     <div className="box box1">
@@ -92,7 +92,7 @@ const Header = () => {
                     </a>
                 </p>
             </div>
-        </header>
+        </div>
     );
 };
 

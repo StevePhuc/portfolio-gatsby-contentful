@@ -1,19 +1,41 @@
 import React from "react";
-// import { Link } from "gatsby";
-// import { Button } from "semantic-ui-react";
 
+import { createMuiTheme } from "@material-ui/core/styles";
+import { ThemeProvider } from "@material-ui/styles";
+import { green, orange } from "@material-ui/core/colors";
 import SEO from "../components/seo";
-// import "semantic-ui-css/semantic.min.css";
+import "typeface-roboto";
 import "../components/index.css";
 import Header from "../components/header";
 import OldIndex from "../components/old-html";
+import MainHome from "../components/HomePage/MainHome";
+import HideAppBar from "../components/NavBar/HideAppBar";
+
+const theme = createMuiTheme({
+    palette: {
+        primary: {
+            light: "#6fbf73",
+            main: "#4caf50",
+            dark: "#357a38",
+            contrastText: "#fff",
+        },
+        secondary: {
+            light: "#ffa733",
+            main: "#ff9100",
+            dark: "#b26500",
+            contrastText: "#000",
+        },
+    },
+});
 
 const IndexPage = () => (
-    <div>
+    <ThemeProvider theme={theme}>
         <SEO title="Home" />
         <Header />
+        <HideAppBar />
+        <MainHome />
         {/* <OldIndex /> */}
-    </div>
+    </ThemeProvider>
 );
 
 export default IndexPage;

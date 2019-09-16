@@ -5,6 +5,8 @@
   "version": "0.1.0",
   "author": "Steve Phuc <stevephuc.dev@gmail.com>",
   "dependencies": {
+    "@material-ui/core": "^4.4.2",
+    "@material-ui/styles": "^4.4.1",
     "dotenv": "^8.1.0",
     "gatsby": "^2.15.15",
     "gatsby-background-image": "^0.8.11",
@@ -19,7 +21,8 @@
     "prop-types": "^15.7.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "react-helmet": "^5.2.1"
+    "react-helmet": "^5.2.1",
+    "typeface-roboto": "^0.0.75"
   },
   "devDependencies": {
     "eslint-config-airbnb": "^18.0.1",
