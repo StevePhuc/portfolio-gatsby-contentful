@@ -6,13 +6,13 @@ import SEO from "../components/seo";
 import "semantic-ui-css/semantic.min.css";
 import "../components/index.css";
 import Header from "../components/header";
-import OldIndex from "../components/old-html";
+import Project from "../components/project";
 
 const IndexPage = () => (
     <div>
         <SEO title="Home" />
         <Header />
-        {/* <OldIndex /> */}
+        <Project />
     </div>
 );
 
