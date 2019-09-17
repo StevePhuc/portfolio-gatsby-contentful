@@ -22,5 +22,6 @@ module.exports = {
         "linebreak-style": 0,
         "react/jsx-filename-extension": [1, { extensions: [".js", ".jsx"] }],
         "react/jsx-indent": ["error", 4],
+        "arrow-parens": 0,
     },
 };

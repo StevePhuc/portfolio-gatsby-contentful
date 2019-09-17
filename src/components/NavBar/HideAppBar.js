@@ -46,10 +46,10 @@ export default function HideAppBar(props) {
             {/* <CssBaseline /> */}
             <HideOnScroll {...props}>
                 <AppBar position="sticky" color="primary">
-                    <Toolbar>
-                        <NavMenu />
-                        {/* <Typography variant="h6">Scroll to Hide App Bar</Typography> */}
-                    </Toolbar>
+                    {/* <Toolbar> */}
+                    <NavMenu />
+                    {/* <Typography variant="h6">Scroll to Hide App Bar</Typography> */}
+                    {/* </Toolbar> */}
                 </AppBar>
             </HideOnScroll>
             {/* <Toolbar /> */}
