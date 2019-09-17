@@ -61,12 +61,20 @@ export default ({ title, subheader, body2 }) => {
                 </Typography>
             </CardContent>
             <CardActions className={classes.cardActions}>
+<<<<<<< HEAD
                 <a href="#contact" className={classes.linkGit} target="_blank">
+=======
+                <Link variant="body2" href="#contact" className={classes.linkGit}>
+>>>>>>> 3c49d149099eaa06db74340ce59af92deb353959
                     <IconButton aria-label="share">
                         <CodeIcon color="secondary" />
                     </IconButton>
                     <Typography color="textSecondary">Github</Typography>
+<<<<<<< HEAD
                 </a>
+=======
+                </Link>
+>>>>>>> 3c49d149099eaa06db74340ce59af92deb353959
                 <Link variant="body2" href="#contact" className={classes.linkDemo}>
                     <IconButton aria-label="share">
                         <VisibilityIcon color="secondary" />
