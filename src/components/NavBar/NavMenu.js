@@ -116,7 +116,7 @@ export default () => {
                             <ListItemText primary="Contact" />
                         </ListItem>
                     </Link>
-                    <Link key="Info" href="#info" className={classes.avatarLink}>
+                    <Link key="Skills" href="#skills" className={classes.avatarLink}>
                         <ListItem className={classes.avatarList}>
                             <ListItemAvatar className={classes.avatarItem}>
                                 <Avatar

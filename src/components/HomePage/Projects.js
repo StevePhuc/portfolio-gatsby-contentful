@@ -1,7 +1,8 @@
 import React from "react";
-import { Container, Typography } from "@material-ui/core";
+import { Container, Typography, Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "./Card";
+import SectionTitle from "./SectionTitle";
 
 const useStyles = makeStyles(theme => ({
     h2: {
@@ -20,20 +21,48 @@ export default () => {
     return (
         <>
             <Container>
-                <div id="project" style={{ paddingTop: "30px" }}>
-                    <Typography variant="h2" className={classes.h2}>
-                        Project
-                    </Typography>
-                </div>
-                <Card title="Finlary" subheader="React, Firebase, Mongodb" body2="Description" />
-            </Container>
-            <Container>
-                <div id="contact" style={{ paddingTop: "30px" }}>
-                    <Typography variant="h2" className={classes.h2}>
-                        Contact
-                    </Typography>
-                </div>
-                <Card />
+                <SectionTitle title="project" />
+                <Grid container spacing={3}>
+                    <Grid item xs={12} sm={6} md={4}>
+                        <Card
+                            title="Finlary"
+                            subHeader="React, Firebase, Nodejs, Mongodb"
+                            description="Finlary - Learning Finnish Vocabulary App "
+                            imageSrc="https://camo.githubusercontent.com/70795fc8753bb02bfeb86b92ae0958d79074ef90/68747470733a2f2f696d6167652e70726e747363722e636f6d2f696d6167652f5f786a446731547553586574417a4279306a7a7870672e706e67"
+                            gitHubLink="https://github.com/DBi1512/demo-day"
+                            demoLink="https://finlary.netlify.com/"
+                        />
+                    </Grid>
+                    <Grid item xs={12} sm={6} md={4}>
+                        <Card
+                            title="Eventify "
+                            subHeader="React, Redux, Firebase"
+                            description="Integrify Intranet Event Manager React App"
+                            imageSrc="https://github.com/integrify-class2019/integrify-intranet-event-manager-react-app/raw/master/src/assets/images/demo.png"
+                            gitHubLink="https://github.com/integrify-class2019/integrify-intranet-event-manager-react-app"
+                            demoLink="https://eventify-beta.netlify.com/"
+                        />
+                    </Grid>
+                    <Grid item xs={12} sm={6} md={4}>
+                        <Card
+                            title="Learning with Texts  "
+                            subHeader="Chrome Extension, Javascript"
+                            description="Learning Languages with Texts in your Content"
+                            imageSrc="https://lh3.googleusercontent.com/PbRZQWkT3cgC-DCFiTC9GRNONcJPiI6BCJOMc3A8WFzu60qcr0Odp7FbhqrfDSAoeiHN4nTI7Q=w640-h400-e365"
+                            demoLink="https://chrome.google.com/webstore/detail/learning-languages-with-t/degdjdhdlmnkeccfcpepfobgpjaphbee?hl=en"
+                        />
+                    </Grid>
+                    <Grid item xs={12} sm={6} md={4}>
+                        <Card
+                            title="Rokotin"
+                            subHeader="HTML, Javascript, CSS, Firebase"
+                            description="Vaccination-promotion application"
+                            imageSrc="https://github.com/xurxe/Rokotin-NHH/raw/develop/assets/images/rokotin_logo_blue+underline-whiteBG.jpg"
+                            gitHubLink="https://github.com/xurxe/Rokotin-NHH"
+                            demoLink="https://rokotin.fi/"
+                        />
+                    </Grid>
+                </Grid>
             </Container>
         </>
     );

@@ -21,7 +21,7 @@ import { Link } from "@material-ui/core";
 
 const useStyles = makeStyles(theme => ({
     card: {
-        maxWidth: 345,
+        // maxWidth: 345,
     },
     media: {
         height: 0,
@@ -32,6 +32,7 @@ const useStyles = makeStyles(theme => ({
     // },
     cardActions: {
         justifyContent: "space-around",
+        // padding: "0 ",
         "& button:hover": {
             backgroundColor: "transparent",
         },
@@ -48,39 +49,35 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-export default ({ title, subheader, body2 }) => {
+export default ({ title, subHeader, description, imageSrc, gitHubLink, demoLink }) => {
     const classes = useStyles();
 
     return (
         <Card className={classes.card}>
-            <CardHeader title={title || "Title"} subheader={subheader} />
-            <CardMedia className={classes.media} image="/static/images/cards/paella.jpg" title="Paella dish" />
+            <CardHeader title={title || "Title"} subheader={subHeader} />
+            <CardMedia className={classes.media} image={imageSrc} title={title} />
             <CardContent>
                 <Typography variant="body2" color="textSecondary" component="p">
-                    {body2}
+                    {description}
                 </Typography>
             </CardContent>
             <CardActions className={classes.cardActions}>
-<<<<<<< HEAD
-                <a href="#contact" className={classes.linkGit} target="_blank">
-=======
-                <Link variant="body2" href="#contact" className={classes.linkGit}>
->>>>>>> 3c49d149099eaa06db74340ce59af92deb353959
-                    <IconButton aria-label="share">
-                        <CodeIcon color="secondary" />
-                    </IconButton>
-                    <Typography color="textSecondary">Github</Typography>
-<<<<<<< HEAD
-                </a>
-=======
-                </Link>
->>>>>>> 3c49d149099eaa06db74340ce59af92deb353959
-                <Link variant="body2" href="#contact" className={classes.linkDemo}>
-                    <IconButton aria-label="share">
-                        <VisibilityIcon color="secondary" />
-                    </IconButton>
-                    <Typography color="textSecondary">DEMO</Typography>
-                </Link>
+                {gitHubLink && (
+                    <a href={gitHubLink} className={classes.linkGit} target="_blank">
+                        <IconButton aria-label="share">
+                            <CodeIcon color="secondary" />
+                        </IconButton>
+                        <Typography color="textSecondary">Github</Typography>
+                    </a>
+                )}
+                {demoLink && (
+                    <Link href={demoLink} className={classes.linkDemo} target="_blank">
+                        <IconButton aria-label="share">
+                            <VisibilityIcon color="secondary" />
+                        </IconButton>
+                        <Typography color="textSecondary">DEMO</Typography>
+                    </Link>
+                )}
             </CardActions>
         </Card>
     );

@@ -1,6 +1,7 @@
 import React from "react";
 import { useStaticQuery, graphql, Link } from "gatsby";
 import Img from "gatsby-image";
+import logoIntegrify from "../images/logoIntegrify.svg";
 
 const Header = () => {
     const data = useStaticQuery(graphql`
@@ -63,7 +64,7 @@ const Header = () => {
                         <address>{place}</address>
                     </div>
                     <div className="box box4">
-                        <img src="./asset/images/logoIntegrify.svg" alt="" />
+                        <img src={logoIntegrify} alt="" />
                     </div>
                 </div>
             </div>

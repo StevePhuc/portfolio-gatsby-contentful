@@ -7,9 +7,11 @@ import SEO from "../components/seo";
 import "typeface-roboto";
 import "../components/index.css";
 import Header from "../components/header";
-import OldIndex from "../components/old-html";
+// import OldIndex from "../components/old-html";
 import Projects from "../components/HomePage/Projects";
+import Skills from "../components/HomePage/Skills";
 import HideAppBar from "../components/NavBar/HideAppBar";
+import Contact from "../components/HomePage/Contact";
 
 const theme = createMuiTheme({
     palette: {
@@ -30,6 +32,8 @@ const IndexPage = () => (
         <Header />
         <HideAppBar />
         <Projects />
+        <Skills />
+        <Contact />
         {/* <OldIndex /> */}
     </ThemeProvider>
 );
