@@ -11,15 +11,12 @@ import {
     ListItemAvatar,
     Avatar,
 } from "@material-ui/core";
-import InboxIcon from "@material-ui/icons/Inbox";
 import { makeStyles } from "@material-ui/styles";
 import HomeIcon from "@material-ui/icons/Home";
-import CodeIcon from "@material-ui/icons/Code";
 import ContactMailIcon from "@material-ui/icons/ContactMail";
 import AssignmentTurnedInIcon from "@material-ui/icons/AssignmentTurnedIn";
 // import { useTheme } from "@material-ui/styles";
 
-const sections = ["Home", "Project", "Contact"];
 const useStyles = makeStyles(theme => ({
     toolbar: {
         // overflowX: "auto",
@@ -32,6 +29,7 @@ const useStyles = makeStyles(theme => ({
         },
         "& a:hover": {
             textDecoration: "none",
+            // backgroundColor: theme.palette.primary.light,
         },
     },
     iconItemList: {
@@ -47,7 +45,10 @@ const useStyles = makeStyles(theme => ({
     },
     avatarLink: {
         // flex: 1,
-        backgroundColor: "rgba(0, 0, 0, 0.08)",
+        "&:hover": {
+            backgroundColor: "rgba(0, 0, 0, 0.08)",
+            color: "white",
+        },
         marginLeft: "auto",
         "& li": {
             paddingTop: "5px",
@@ -91,7 +92,7 @@ export default () => {
         <Container>
             <Toolbar component="nav" variant="root" disableGutters className={classes.toolbar}>
                 <List className={classes.toolbarList}>
-                    <Link key="Home" href="#Home">
+                    <Link key="Home" href="#home">
                         <ListItem button className={classes.ItemList}>
                             <ListItemIcon className={classes.iconItemList}>
                                 <HomeIcon />
@@ -99,7 +100,7 @@ export default () => {
                             <ListItemText primary="Home" />
                         </ListItem>
                     </Link>
-                    <Link key="Project" href="#Project">
+                    <Link key="Project" href="#project">
                         <ListItem button className={classes.ItemList}>
                             <ListItemIcon className={classes.iconItemList}>
                                 <AssignmentTurnedInIcon />
@@ -107,7 +108,7 @@ export default () => {
                             <ListItemText primary="Project" />
                         </ListItem>
                     </Link>
-                    <Link key="Contact" href="#Contact">
+                    <Link key="Contact" href="#contact">
                         <ListItem button className={classes.ItemList}>
                             <ListItemIcon className={classes.iconItemList}>
                                 <ContactMailIcon />
@@ -115,7 +116,7 @@ export default () => {
                             <ListItemText primary="Contact" />
                         </ListItem>
                     </Link>
-                    <Link key="Info" href="#Info" className={classes.avatarLink}>
+                    <Link key="Info" href="#info" className={classes.avatarLink}>
                         <ListItem className={classes.avatarList}>
                             <ListItemAvatar className={classes.avatarItem}>
                                 <Avatar

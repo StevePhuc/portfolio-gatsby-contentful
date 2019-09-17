@@ -8,7 +8,7 @@ import "typeface-roboto";
 import "../components/index.css";
 import Header from "../components/header";
 import OldIndex from "../components/old-html";
-import MainHome from "../components/HomePage/MainHome";
+import Projects from "../components/HomePage/Projects";
 import HideAppBar from "../components/NavBar/HideAppBar";
 
 const theme = createMuiTheme({
@@ -29,7 +29,7 @@ const IndexPage = () => (
         <SEO title="Home" />
         <Header />
         <HideAppBar />
-        <MainHome />
+        <Projects />
         {/* <OldIndex /> */}
     </ThemeProvider>
 );
