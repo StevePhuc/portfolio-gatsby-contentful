@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
     Typography,
     Toolbar,
@@ -17,6 +17,7 @@ import ContactMailIcon from "@material-ui/icons/ContactMail";
 import AssignmentTurnedInIcon from "@material-ui/icons/AssignmentTurnedIn";
 // import { useTheme } from "@material-ui/styles";
 import AvatarImage from "../../images/avatar.png";
+import FirstHello from "../FirstHello";
 
 const useStyles = makeStyles(theme => ({
     toolbar: {
@@ -46,6 +47,7 @@ const useStyles = makeStyles(theme => ({
     },
     avatarLink: {
         // flex: 1,
+        color: "white",
         "&:hover": {
             backgroundColor: "rgba(0, 0, 0, 0.08)",
             color: "white",
@@ -93,6 +95,10 @@ const useStyles = makeStyles(theme => ({
 export default () => {
     const classes = useStyles();
     // const theme = useTheme();
+    const [handleOpen, setHandleOpen] = useState({ open: false });
+    const handleShowHello = () => {
+        setHandleOpen({ open: true });
+    };
     return (
         <Container className={classes.cointainer}>
             <Toolbar component="nav" variant="dense" disableGutters className={classes.toolbar}>
@@ -121,13 +127,14 @@ export default () => {
                             <ListItemText primary="Contact" />
                         </ListItem>
                     </Link>
-                    <Link key="Skills" href="#skills" className={classes.avatarLink}>
+                    <Link key="avatar" onClick={handleShowHello} className={classes.avatarLink}>
                         <ListItem className={classes.avatarList}>
                             <ListItemAvatar className={classes.avatarItem}>
                                 <Avatar alt="Steve Phuc" src={AvatarImage} />
                             </ListItemAvatar>
                             <ListItemText primary="Steve Phuc" className={classes.hideMedium} />
                         </ListItem>
+                        <FirstHello handleOpen={handleOpen} setHandleOpen={setHandleOpen} />
                     </Link>
                 </List>
             </Toolbar>

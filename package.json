@@ -21,10 +21,12 @@
     "gatsby-source-contentful": "^2.1.36",
     "gatsby-source-filesystem": "^2.1.22",
     "gatsby-transformer-sharp": "^2.2.14",
+    "material-auto-rotating-carousel": "^3.0.2",
     "prop-types": "^15.7.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-helmet": "^5.2.1",
+    "react-swipeable-views": "^0.13.3",
     "typeface-roboto": "^0.0.75"
   },
   "devDependencies": {
