@@ -4,6 +4,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import Card from "./Card";
 import SectionTitle from "./SectionTitle";
 import TTU from "../../images/thinktankunit.png";
+import Vibami from "../../images/vibami.png";
+import Matikainen from "../../images/matikainen.png";
 
 const useStyles = makeStyles(theme => ({
     h2: {
@@ -70,6 +72,24 @@ export default () => {
                             description="Think Tank Unit Website"
                             imageSrc={TTU}
                             demoLink="https://ttu-develop.netlify.com/"
+                        />
+                    </Grid>
+                    <Grid item xs={12} sm={6} md={4}>
+                        <Card
+                            title="Vibami"
+                            subHeader="Wordpress, SEO"
+                            description="Vibami Website"
+                            imageSrc={Vibami}
+                            demoLink="https://www.vibami.fi/"
+                        />
+                    </Grid>
+                    <Grid item xs={12} sm={6} md={4}>
+                        <Card
+                            title="Matikainen Oy"
+                            subHeader="Wordpress, SEO"
+                            description="Tilitoimisto (Accounting) Website"
+                            imageSrc={Matikainen}
+                            demoLink="http://www.matikainenoy.fi/"
                         />
                     </Grid>
                 </Grid>
