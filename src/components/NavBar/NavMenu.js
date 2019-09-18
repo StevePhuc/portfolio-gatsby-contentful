@@ -16,6 +16,7 @@ import HomeIcon from "@material-ui/icons/Home";
 import ContactMailIcon from "@material-ui/icons/ContactMail";
 import AssignmentTurnedInIcon from "@material-ui/icons/AssignmentTurnedIn";
 // import { useTheme } from "@material-ui/styles";
+import AvatarImage from "../../images/avatar.png";
 
 const useStyles = makeStyles(theme => ({
     toolbar: {
@@ -119,10 +120,7 @@ export default () => {
                     <Link key="Skills" href="#skills" className={classes.avatarLink}>
                         <ListItem className={classes.avatarList}>
                             <ListItemAvatar className={classes.avatarItem}>
-                                <Avatar
-                                    alt="Steve Phuc"
-                                    src="http://images.ctfassets.net/4isj4wkaqd88/syTzt6GKnRD9JEuBYCARk/a7bafdfb0f965561f81f7eb45cc7e21c/phucavata.jpg?w=150&h=150&q=50&fm=webp&fit=fill"
-                                />
+                                <Avatar alt="Steve Phuc" src={AvatarImage} />
                             </ListItemAvatar>
                             <ListItemText primary="Steve Phuc" className={classes.hideMedium} />
                         </ListItem>
