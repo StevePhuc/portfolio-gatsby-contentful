@@ -1,22 +1,17 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import clsx from "clsx";
 import Card from "@material-ui/core/Card";
 import CardHeader from "@material-ui/core/CardHeader";
 import CardMedia from "@material-ui/core/CardMedia";
 import CardContent from "@material-ui/core/CardContent";
 import CardActions from "@material-ui/core/CardActions";
-import Collapse from "@material-ui/core/Collapse";
-import Avatar from "@material-ui/core/Avatar";
+
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
-import { red } from "@material-ui/core/colors";
-import FavoriteIcon from "@material-ui/icons/Favorite";
-import ShareIcon from "@material-ui/icons/Share";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import MoreVertIcon from "@material-ui/icons/MoreVert";
-import CodeIcon from "@material-ui/icons/Code";
-import VisibilityIcon from "@material-ui/icons/Visibility";
+
+import { useTheme } from "@material-ui/styles";
+import Icon from "@mdi/react";
+import { mdiGithubCircle, mdiCardSearchOutline } from "@mdi/js";
 import { Link } from "@material-ui/core";
 
 const useStyles = makeStyles(theme => ({
@@ -51,6 +46,8 @@ const useStyles = makeStyles(theme => ({
 
 export default ({ title, subHeader, description, imageSrc, gitHubLink, demoLink }) => {
     const classes = useStyles();
+    const theme = useTheme();
+    // console.log(theme);
 
     return (
         <Card className={classes.card}>
@@ -63,17 +60,27 @@ export default ({ title, subHeader, description, imageSrc, gitHubLink, demoLink 
             </CardContent>
             <CardActions className={classes.cardActions}>
                 {gitHubLink && (
-                    <a href={gitHubLink} className={classes.linkGit} target="_blank">
+                    <Link href={gitHubLink} className={classes.linkGit} target="_blank">
                         <IconButton aria-label="share">
-                            <CodeIcon color="secondary" />
+                            <Icon
+                                path={mdiGithubCircle}
+                                title="Github Link"
+                                size={1}
+                                color={theme.palette.secondary.main}
+                            />
                         </IconButton>
                         <Typography color="textSecondary">Github</Typography>
-                    </a>
+                    </Link>
                 )}
                 {demoLink && (
                     <Link href={demoLink} className={classes.linkDemo} target="_blank">
                         <IconButton aria-label="share">
-                            <VisibilityIcon color="secondary" />
+                            <Icon
+                                path={mdiCardSearchOutline}
+                                title="Demo Link"
+                                size={1}
+                                color={theme.palette.secondary.main}
+                            />
                         </IconButton>
                         <Typography color="textSecondary">DEMO</Typography>
                     </Link>

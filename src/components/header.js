@@ -47,7 +47,7 @@ const Header = () => {
     `);
 
     const { avata, name, title, subline, place, headling, headlineTime, headerButtons } = data.contentfulHeader;
-    console.log(headerButtons);
+    // console.log(headerButtons);
     return (
         <div className="header-main">
             <div className="header2">
@@ -79,7 +79,9 @@ const Header = () => {
                 <div className="late">
                     <div>
                         {headerButtons.map(headerBt => (
-                            <a href={headerBt.link}>{headerBt.button}</a>
+                            <a key={headerBt.link} href={headerBt.link}>
+                                {headerBt.button}
+                            </a>
                         ))}
                     </div>
                 </div>

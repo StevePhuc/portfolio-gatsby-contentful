@@ -90,7 +90,7 @@ export default () => {
     // const theme = useTheme();
     return (
         <Container>
-            <Toolbar component="nav" variant="root" disableGutters className={classes.toolbar}>
+            <Toolbar component="nav" variant="dense" disableGutters className={classes.toolbar}>
                 <List className={classes.toolbarList}>
                     <Link key="Home" href="#home">
                         <ListItem button className={classes.ItemList}>

@@ -3,6 +3,7 @@ import { Container, Typography, Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "./Card";
 import SectionTitle from "./SectionTitle";
+import TTU from "../../images/thinktankunit.png";
 
 const useStyles = makeStyles(theme => ({
     h2: {
@@ -60,6 +61,15 @@ export default () => {
                             imageSrc="https://github.com/xurxe/Rokotin-NHH/raw/develop/assets/images/rokotin_logo_blue+underline-whiteBG.jpg"
                             gitHubLink="https://github.com/xurxe/Rokotin-NHH"
                             demoLink="https://rokotin.fi/"
+                        />
+                    </Grid>
+                    <Grid item xs={12} sm={6} md={4}>
+                        <Card
+                            title="TTU"
+                            subHeader="React, Gatsby, Contentful, Firebase, Figma"
+                            description="Think Tank Unit Website"
+                            imageSrc={TTU}
+                            demoLink="https://ttu-develop.netlify.com/"
                         />
                     </Grid>
                 </Grid>
