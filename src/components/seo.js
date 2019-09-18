@@ -9,6 +9,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Helmet from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
+import avatar from "../images/avatar.png";
 
 function SEO({ description, lang, meta, title }) {
     const { site } = useStaticQuery(
@@ -26,63 +27,54 @@ function SEO({ description, lang, meta, title }) {
     );
 
     const metaDescription = description || site.siteMetadata.description;
+    const metaTitle = title || site.siteMetadata.title;
 
+    // meta={[
+    //     {
+    //         name: `description`,
+    //         content: metaDescription,
+    //     },
+    //     {
+    //         property: `og:title`,
+    //         content: title,
+    //     },
+    //     {
+    //         property: `og:description`,
+    //         content: metaDescription,
+    //     },
+    //     {
+    //         property: `og:type`,
+    //         content: `website`,
+    //     },
+    //     {
+    //         name: `twitter:card`,
+    //         content: `summary`,
+    //     },
+    //     {
+    //         name: `twitter:creator`,
+    //         content: site.siteMetadata.author,
+    //     },
+    //     {
+    //         name: `twitter:title`,
+    //         content: title,
+    //     },
+    //     {
+    //         name: `twitter:description`,
+    //         content: metaDescription,
+    //     },
     return (
-        <Helmet
-            htmlAttributes={{
-                lang,
-            }}
-            title={title}
-            titleTemplate={`%s | ${site.siteMetadata.title}`}
-            meta={[
-                {
-                    name: `description`,
-                    content: metaDescription,
-                },
-                {
-                    property: `og:title`,
-                    content: title,
-                },
-                {
-                    property: `og:description`,
-                    content: metaDescription,
-                },
-                {
-                    property: `og:type`,
-                    content: `website`,
-                },
-                {
-                    name: `twitter:card`,
-                    content: `summary`,
-                },
-                {
-                    name: `twitter:creator`,
-                    content: site.siteMetadata.author,
-                },
-                {
-                    name: `twitter:title`,
-                    content: title,
-                },
-                {
-                    name: `twitter:description`,
-                    content: metaDescription,
-                },
-            ].concat(meta)}
-        />
+        <Helmet>
+            <html lang={lang} />
+            <title> {metaTitle}</title>
+            <meta property="og:title" content={`${metaTitle} | Steve Phuc Portfolio`} />
+            {/* <meta property="og:description" content={description} /> */}
+            {/* <meta property="og:image" content={`https:${image.file.url}`} /> */}
+            {/* <meta property="og:url" content={url} /> */}
+            <meta name="description" content={metaDescription} />
+            {/* <meta name="theme-color" content="#4caf50" /> */}
+            {/* <link rel="icon" type="image/png" href={avatar} /> */}
+        </Helmet>
     );
 }
-
-SEO.defaultProps = {
-    lang: `en`,
-    meta: [],
-    description: ``,
-};
-
-SEO.propTypes = {
-    description: PropTypes.string,
-    lang: PropTypes.string,
-    meta: PropTypes.arrayOf(PropTypes.object),
-    title: PropTypes.string.isRequired,
-};
 
 export default SEO;

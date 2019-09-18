@@ -31,7 +31,7 @@ const theme = createMuiTheme({
 
 const IndexPage = () => (
     <ThemeProvider theme={theme}>
-        <SEO title="Home" />
+        <SEO />
         <Header />
         <HideAppBar />
         <Projects />
