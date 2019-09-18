@@ -73,6 +73,9 @@ const useStyles = makeStyles(theme => ({
         },
     },
     [theme.breakpoints.down("xs")]: {
+        cointainer: {
+            padding: 0,
+        },
         toolbar: {
             overflowX: "auto",
         },
@@ -82,6 +85,7 @@ const useStyles = makeStyles(theme => ({
             "& div": {
                 textAlign: "center",
             },
+            padding: "5px 5px 0 5px",
         },
     },
 }));
@@ -90,7 +94,7 @@ export default () => {
     const classes = useStyles();
     // const theme = useTheme();
     return (
-        <Container>
+        <Container className={classes.cointainer}>
             <Toolbar component="nav" variant="dense" disableGutters className={classes.toolbar}>
                 <List className={classes.toolbarList}>
                     <Link key="Home" href="#home">

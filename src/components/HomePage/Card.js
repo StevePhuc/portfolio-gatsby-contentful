@@ -17,6 +17,9 @@ import { Link } from "@material-ui/core";
 const useStyles = makeStyles(theme => ({
     card: {
         // maxWidth: 345,
+        // "& .MuiCardHeader-title": {
+        //     color: theme.palette.secondary.main,
+        // },
     },
     media: {
         height: 0,

@@ -12,16 +12,19 @@ import Projects from "../components/HomePage/Projects";
 import Skills from "../components/HomePage/Skills";
 import HideAppBar from "../components/NavBar/HideAppBar";
 import Contact from "../components/HomePage/Contact";
+import Footer from "../components/HomePage/Footer";
 
 const theme = createMuiTheme({
     palette: {
         primary: {
-            light: "#6fbf73",
             main: "#4caf50",
             dark: "#357a38",
         },
         secondary: {
-            main: "#795548",
+            main: "#af504c",
+        },
+        third: {
+            main: "#4c7aaf",
         },
     },
 });
@@ -34,6 +37,7 @@ const IndexPage = () => (
         <Projects />
         <Skills />
         <Contact />
+        <Footer />
         {/* <OldIndex /> */}
     </ThemeProvider>
 );
