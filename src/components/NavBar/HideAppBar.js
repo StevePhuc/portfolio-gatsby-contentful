@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -18,10 +18,16 @@ function HideOnScroll(props) {
     // Note that you normally won't need to set the window ref as useScrollTrigger
     // will default to window.
     // This is only being set here because the demo is in an iframe.
+    const [windowHeigh, setWindowHeigh] = useState(1000);
+    useEffect(() => {
+        setWindowHeigh(document.documentElement.clientHeight);
+        console.log(document.documentElement.clientHeight);
+    }, []);
+
     const trigger = useScrollTrigger({
         target: window ? window() : undefined,
         // disableHysteresis: true,
-        threshold: 1000,
+        threshold: windowHeigh,
     });
 
     return (
