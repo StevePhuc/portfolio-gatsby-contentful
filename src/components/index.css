@@ -52,7 +52,7 @@ a:visited {
     /* background-size: cover;
     background-position: center center; */
     height: 100vh;
-    min-height: 700px;
+    /* min-height: 700px; */
     position: relative;
 }
 .header-background {
@@ -62,7 +62,7 @@ a:visited {
     object-fit: cover;
     object-position: center;
     width: 100%;
-    min-height: 700px;
+    /* min-height: 700px; */
 }
 
 .header1 {
@@ -478,6 +478,7 @@ i {
     .box3 {
         text-align: center;
     }
+
     .box4 {
         order: -1;
         text-align: center;
@@ -552,9 +553,17 @@ i {
         flex: 1 1 100%;
     }
 
-    .header-main {
-        padding-top: 10px;
+    .box3 > * {
+        margin: 0;
     }
+    .box4 img {
+        margin: 0;
+    }
+
+    .box1 {
+        margin-top: 15px;
+    }
+
     .header1 button {
         width: 150px;
         font-size: 15px;
@@ -585,5 +594,18 @@ i {
     }
     .divider-color {
         border-color: #bdbdbd;
+    }
+}
+
+@media screen and (max-width: 450px) and (min-height: 600px) {
+    .box1 {
+        margin-top: 10vh;
+    }
+    .header1 {
+        margin-top: 5vh;
+    }
+    .header1 .ready,
+    .header1 .time {
+        margin-bottom: 10px;
     }
 }
