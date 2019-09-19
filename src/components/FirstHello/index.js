@@ -17,7 +17,7 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-export default ({ handleOpen, setHandleOpen }) => {
+export default ({ handleOpen, setHandleOpen, isMobile }) => {
     const classes = useStyles();
     const theme = useTheme();
     return (
@@ -29,6 +29,7 @@ export default ({ handleOpen, setHandleOpen }) => {
                 onClose={() => setHandleOpen({ open: false })}
                 onStart={() => setHandleOpen({ open: false })}
                 autoplay={false}
+                mobile={isMobile}
                 style={{ position: "absolute" }}
             >
                 <Slide

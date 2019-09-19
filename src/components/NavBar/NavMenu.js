@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
     Typography,
     Toolbar,
@@ -16,6 +16,7 @@ import HomeIcon from "@material-ui/icons/Home";
 import ContactMailIcon from "@material-ui/icons/ContactMail";
 import AssignmentTurnedInIcon from "@material-ui/icons/AssignmentTurnedIn";
 // import { useTheme } from "@material-ui/styles";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 import AvatarImage from "../../images/avatar.png";
 import FirstHello from "../FirstHello";
 
@@ -99,6 +100,16 @@ export default () => {
     const handleShowHello = () => {
         setHandleOpen({ open: true });
     };
+
+    const matches = useMediaQuery("(max-width:600px)");
+    useEffect(() => {
+        // localStorage.clear();
+        if (localStorage.getItem("firstTime") === null) {
+            localStorage.setItem("firstTime", "true");
+            setHandleOpen({ open: true });
+        }
+    }, []);
+
     return (
         <Container className={classes.cointainer}>
             <Toolbar component="nav" variant="dense" disableGutters className={classes.toolbar}>
@@ -134,7 +145,7 @@ export default () => {
                             </ListItemAvatar>
                             <ListItemText primary="Steve Phuc" className={classes.hideMedium} />
                         </ListItem>
-                        <FirstHello handleOpen={handleOpen} setHandleOpen={setHandleOpen} />
+                        <FirstHello isMobile={matches} handleOpen={handleOpen} setHandleOpen={setHandleOpen} />
                     </Link>
                 </List>
             </Toolbar>
