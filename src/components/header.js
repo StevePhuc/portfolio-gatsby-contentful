@@ -86,20 +86,22 @@ const Header = () => {
                     <span>{subline}</span>
                 </div>
                 <div className="late">
-                    <div>
-                        {headerButtons.map(headerBt => (
-                            <a key={headerBt.link} href={headerBt.link}>
-                                {headerBt.button}
-                            </a>
-                        ))}
-                    </div>
+                    {headerButtons.map(headerBt => (
+                        <a key={headerBt.link} href={headerBt.link}>
+                            {headerBt.button}
+                        </a>
+                    ))}
                 </div>
             </div>
             <div className="photosrc">
-                <p className="background-info-title">
-                    <span style={{ color: "#fff" }}>Mu Cang Chai, Vietnam from space by</span>
+                <p className="background-info-title" style={{ color: "rgba(255, 255, 255, 0.65)" }}>
+                    <span>Mu Cang Chai, Vietnam from space by</span>
                     {` `}
-                    <a href="http://www.flickr.com/photos/23866512@N05" target="black">
+                    <a
+                        href="http://www.flickr.com/photos/23866512@N05"
+                        target="black"
+                        style={{ color: "rgba(255, 255, 255, 0.65)" }}
+                    >
                         Photo by tu_geo
                     </a>
                 </p>

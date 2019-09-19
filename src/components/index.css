@@ -48,7 +48,7 @@ a:visited {
 .header-main {
     /* background-image: linear-gradient(rgba(58, 58, 189, 0.103) 0%, rgba(43, 37, 37, 0.1) 40%),
         url("https://stevephuc.github.io/portfolio/asset/images/muquangchai.jpg"); */
-    background-color: rgba(0, 0, 0, 0.08);
+    background-image: linear-gradient(#ffffff45, #0000008c);
     /* background-size: cover;
     background-position: center center; */
     height: 100vh;
@@ -533,7 +533,7 @@ i {
 
 @media all and (max-width: 450px) {
     .late a {
-        margin: 0;
+        margin: 0 5px;
         /* padding: 10px 0; */
         width: 150px;
     }
