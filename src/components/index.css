@@ -46,14 +46,23 @@ a:visited {
 }
 
 .header-main {
-    background-image: linear-gradient(rgba(58, 58, 189, 0.103) 0%, rgba(43, 37, 37, 0.1) 40%),
-        url("https://stevephuc.github.io/portfolio/asset/images/muquangchai.jpg");
-    background-color: #8bc34a;
-    background-size: cover;
-    background-position: center center;
+    /* background-image: linear-gradient(rgba(58, 58, 189, 0.103) 0%, rgba(43, 37, 37, 0.1) 40%),
+        url("https://stevephuc.github.io/portfolio/asset/images/muquangchai.jpg"); */
+    background-color: rgba(0, 0, 0, 0.08);
+    /* background-size: cover;
+    background-position: center center; */
     height: 100vh;
-    /* min-height: 700px; */
+    min-height: 700px;
     position: relative;
+}
+.header-background {
+    position: absolute !important;
+    z-index: -1;
+    height: 100vh;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    min-height: 700px;
 }
 
 .header1 {

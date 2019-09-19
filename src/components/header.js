@@ -2,10 +2,18 @@ import React from "react";
 import { useStaticQuery, graphql, Link } from "gatsby";
 import Img from "gatsby-image";
 import logoIntegrify from "../images/logoIntegrify.svg";
+import muquangchai from "../images/muquangchai.jpg";
 
 const Header = () => {
     const data = useStaticQuery(graphql`
         query {
+            file(relativePath: { eq: "muquangchai.jpg" }) {
+                childImageSharp {
+                    fluid(maxWidth: 1000) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
             contentfulHeader {
                 name
                 title
@@ -47,14 +55,15 @@ const Header = () => {
     `);
 
     const { avata, name, title, subline, place, headling, headlineTime, headerButtons } = data.contentfulHeader;
-    // console.log(headerButtons);
+    console.log(data.file);
     return (
         <div className="header-main">
+            <Img fluid={data.file.childImageSharp.fluid} className="header-background" />
+            {/* <img  src={muquangchai} alt="Mu Quang Chai" /> */}
             <div className="header2">
                 <div className="container">
                     <div className="box box1">
                         <Img classNameName="selfie" fixed={avata.fixed} alt="" />
-                        {/* <Img fluid={data.contentfulHeader.avata.fluid} alt="" /> */}
                     </div>
                     <div className="box box2">
                         <h3>{name}</h3>

@@ -6,6 +6,7 @@ import SectionTitle from "./SectionTitle";
 import TTU from "../../images/thinktankunit.png";
 import Vibami from "../../images/vibami.png";
 import Matikainen from "../../images/matikainen.png";
+import portfolio from "../../images/portfolio.png";
 
 const useStyles = makeStyles(theme => ({
     h2: {
@@ -71,6 +72,16 @@ export default () => {
                             subHeader="React, Gatsby, Contentful, Firebase, Figma"
                             description="Think Tank Unit Website"
                             imageSrc={TTU}
+                            demoLink="https://ttu-develop.netlify.com/"
+                        />
+                    </Grid>
+                    <Grid item xs={12} sm={6} md={4}>
+                        <Card
+                            title="Portfolio"
+                            subHeader="React, Gatsby, Contentful, Material-UI"
+                            description="My portfolio"
+                            imageSrc={portfolio}
+                            gitHubLink="https://github.com/StevePhuc/portfolio-gatsby-contentful"
                             demoLink="https://ttu-develop.netlify.com/"
                         />
                     </Grid>
