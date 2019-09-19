@@ -1,6 +1,8 @@
 import React from "react";
+import { useStaticQuery, graphql, Link } from "gatsby";
 import { Container, Typography, Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+
 import Card from "./Card";
 import SectionTitle from "./SectionTitle";
 import TTU from "../../images/thinktankunit.png";
@@ -22,6 +24,68 @@ const useStyles = makeStyles(theme => ({
 export default () => {
     const classes = useStyles();
 
+    const data = useStaticQuery(graphql`
+        query {
+            finlary: file(relativePath: { eq: "finlary.png" }) {
+                childImageSharp {
+                    fluid(maxWidth: 1000) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+            eventify: file(relativePath: { eq: "eventify.png" }) {
+                childImageSharp {
+                    fluid(maxWidth: 1000) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+            learnwithtext: file(relativePath: { eq: "learnwithtext.jpg" }) {
+                childImageSharp {
+                    fluid(maxWidth: 1000) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+            rotokin: file(relativePath: { eq: "rotokin.jpg" }) {
+                childImageSharp {
+                    fluid(maxWidth: 1000) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+            thinktankunit: file(relativePath: { eq: "thinktankunit.png" }) {
+                childImageSharp {
+                    fluid(maxWidth: 1000) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+            vibami: file(relativePath: { eq: "vibami.png" }) {
+                childImageSharp {
+                    fluid(maxWidth: 1000) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+            matikainen: file(relativePath: { eq: "matikainen.png" }) {
+                childImageSharp {
+                    fluid(maxWidth: 1000) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+            portfolio: file(relativePath: { eq: "portfolio.png" }) {
+                childImageSharp {
+                    fluid(maxWidth: 1000) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+        }
+    `);
+    console.log(data);
+
     return (
         <>
             <Container>
@@ -32,7 +96,7 @@ export default () => {
                             title="Finlary"
                             subHeader="React, Firebase, Nodejs, Mongodb"
                             description="Finlary - Learning Finnish Vocabulary App "
-                            imageSrc="https://camo.githubusercontent.com/70795fc8753bb02bfeb86b92ae0958d79074ef90/68747470733a2f2f696d6167652e70726e747363722e636f6d2f696d6167652f5f786a446731547553586574417a4279306a7a7870672e706e67"
+                            imageSrc={data.finlary.childImageSharp.fluid}
                             gitHubLink="https://github.com/DBi1512/demo-day"
                             demoLink="https://finlary.netlify.com/"
                         />
@@ -42,7 +106,7 @@ export default () => {
                             title="Eventify "
                             subHeader="React, Redux, Firebase"
                             description="Integrify Intranet Event Manager React App"
-                            imageSrc="https://github.com/integrify-class2019/integrify-intranet-event-manager-react-app/raw/master/src/assets/images/demo.png"
+                            imageSrc={data.eventify.childImageSharp.fluid}
                             gitHubLink="https://github.com/integrify-class2019/integrify-intranet-event-manager-react-app"
                             demoLink="https://eventify-beta.netlify.com/"
                         />
@@ -52,7 +116,7 @@ export default () => {
                             title="Learning with Texts  "
                             subHeader="Chrome Extension, Javascript"
                             description="Learning Languages with Texts in your Content"
-                            imageSrc="https://lh3.googleusercontent.com/PbRZQWkT3cgC-DCFiTC9GRNONcJPiI6BCJOMc3A8WFzu60qcr0Odp7FbhqrfDSAoeiHN4nTI7Q=w640-h400-e365"
+                            imageSrc={data.learnwithtext.childImageSharp.fluid}
                             demoLink="https://chrome.google.com/webstore/detail/learning-languages-with-t/degdjdhdlmnkeccfcpepfobgpjaphbee?hl=en"
                         />
                     </Grid>
@@ -61,7 +125,7 @@ export default () => {
                             title="Rokotin"
                             subHeader="HTML, Javascript, CSS, Firebase"
                             description="Vaccination-promotion application"
-                            imageSrc="https://github.com/xurxe/Rokotin-NHH/raw/develop/assets/images/rokotin_logo_blue+underline-whiteBG.jpg"
+                            imageSrc={data.rotokin.childImageSharp.fluid}
                             gitHubLink="https://github.com/xurxe/Rokotin-NHH"
                             demoLink="https://rokotin.fi/"
                         />
@@ -71,7 +135,7 @@ export default () => {
                             title="TTU"
                             subHeader="React, Gatsby, Contentful, Firebase, Figma"
                             description="Think Tank Unit Website"
-                            imageSrc={TTU}
+                            imageSrc={data.thinktankunit.childImageSharp.fluid}
                             demoLink="https://ttu-develop.netlify.com/"
                         />
                     </Grid>
@@ -80,7 +144,7 @@ export default () => {
                             title="Portfolio"
                             subHeader="React, Gatsby, Contentful, Material-UI"
                             description="My portfolio"
-                            imageSrc={portfolio}
+                            imageSrc={data.portfolio.childImageSharp.fluid}
                             gitHubLink="https://github.com/StevePhuc/portfolio-gatsby-contentful"
                             demoLink="https://ttu-develop.netlify.com/"
                         />
@@ -90,7 +154,7 @@ export default () => {
                             title="Vibami"
                             subHeader="Wordpress, SEO"
                             description="Vibami Website"
-                            imageSrc={Vibami}
+                            imageSrc={data.vibami.childImageSharp.fluid}
                             demoLink="https://www.vibami.fi/"
                         />
                     </Grid>
@@ -99,7 +163,7 @@ export default () => {
                             title="Matikainen Oy"
                             subHeader="Wordpress, SEO"
                             description="Tilitoimisto (Accounting) Website"
-                            imageSrc={Matikainen}
+                            imageSrc={data.matikainen.childImageSharp.fluid}
                             demoLink="http://www.matikainenoy.fi/"
                         />
                     </Grid>

@@ -5,7 +5,7 @@ import CardHeader from "@material-ui/core/CardHeader";
 import CardMedia from "@material-ui/core/CardMedia";
 import CardContent from "@material-ui/core/CardContent";
 import CardActions from "@material-ui/core/CardActions";
-
+import Img from "gatsby-image";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 
@@ -55,7 +55,13 @@ export default ({ title, subHeader, description, imageSrc, gitHubLink, demoLink 
     return (
         <Card className={classes.card}>
             <CardHeader title={title || "Title"} subheader={subHeader} />
-            <CardMedia className={classes.media} image={imageSrc} title={title} />
+            {/* <CardMedia className={classes.media} image={imageSrc} title={title} /> */}
+            <Img fluid={imageSrc} className={classes.media} title={title} />
+            {/* <CardMedia
+                className={classes.media}
+                image="https://github.com/integrify-class2019/integrify-intranet-event-manager-react-app/raw/master/src/assets/images/demo.png"
+                title={title}
+            /> */}
             <CardContent>
                 <Typography variant="body2" color="textSecondary" component="p">
                     {description}
