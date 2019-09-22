@@ -4,7 +4,7 @@ This is learn Gatsby, Contentful, by building my portfolio again
 
 # Demo
 
-[Portfolio](https://stevephuc.netlify.com)
+[Portfolio](https://stevephuc.com)
 
 # Technologies
 
