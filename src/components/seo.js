@@ -10,6 +10,7 @@ import PropTypes from "prop-types";
 import Helmet from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
 import avatar from "../images/avatar.png";
+import avatarRound from "../images/avatarRound.png";
 
 function SEO({ description, lang, meta, title }) {
     const { site } = useStaticQuery(
@@ -67,8 +68,8 @@ function SEO({ description, lang, meta, title }) {
             <html lang={lang} />
             <title> {metaTitle}</title>
             <meta property="og:title" content={`${metaTitle} | Steve Phuc Portfolio`} />
-            {/* <meta property="og:description" content={description} /> */}
-            {/* <meta property="og:image" content={`https:${image.file.url}`} /> */}
+            <meta property="og:description" content={metaDescription} />
+            <meta property="og:image" content={avatarRound} />
             {/* <meta property="og:url" content={url} /> */}
             <meta name="description" content={metaDescription} />
             {/* <meta name="theme-color" content="#4caf50" /> */}
